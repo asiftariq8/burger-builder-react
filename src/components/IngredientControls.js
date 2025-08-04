@@ -1,17 +1,29 @@
 import React from 'react';
 
-const INGREDIENTS = ['lettuce', 'cheese', 'patty', 'tomato'];
+function IngredientControls({ addIngredient, removeIngredient, clearBurger, ingredientImages }) {
+    // Filter out 'onion' if it's in the ingredientImages object
+    const ingredients = Object.keys(ingredientImages).filter(type => type !== 'onion');
 
-function IngredientControls({ addIngredient, removeIngredient, clearBurger }) {
     return (
         <div className="controls">
-            {INGREDIENTS.map((item) => (
-                <div key={item} className="control-row">
-                    <button onClick={() => addIngredient(item)}>➕ {item}</button>
-                    <button onClick={() => removeIngredient(item)}>➖</button>
-                </div>
-            ))}
-            <button className="clear-btn" onClick={clearBurger}>🔄 Clear/reset burger</button>
+            <h2>Customize Your Burger 🍴</h2>
+
+            <div className="controls-table small">
+                {ingredients.map((type) => (
+                    <div className="control-row" key={type}>
+                        <img src={ingredientImages[type]} alt={type} className="control-img" />
+                        <span className="ingredient-label">
+                            {type.charAt(0).toUpperCase() + type.slice(1)}
+                        </span>
+                        <div className="buttons">
+                            <button className="btn add" onClick={() => addIngredient(type)}>+</button>
+                            <button className="btn remove" onClick={() => removeIngredient(type)}>-</button>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            <button className="btn clear" onClick={clearBurger}>Clear Burger</button>
         </div>
     );
 }

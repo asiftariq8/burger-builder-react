@@ -1,3 +1,10 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 .app {
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -13,10 +20,27 @@
     border-radius: 20px;
     padding: 10px 0;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    max-height: 450px;
+    max-height: 250px;
     overflow-y: auto;
     transition: all 0.3s ease;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Scrollbar Styling */
+.burger::-webkit-scrollbar {
+    width: 6px;
+}
+
+.burger::-webkit-scrollbar-track {
+    background: #ffe0e0;
+}
+
+.burger::-webkit-scrollbar-thumb {
+    background-color: #ff80ab;
+    border-radius: 3px;
 }
 
 /* Bun Images */
@@ -62,43 +86,103 @@
     font-size: 14px;
 }
 
-/* Controls styling */
+/* Controls Styling */
 .controls {
-    margin-top: 20px;
-    display: inline-block;
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    padding: 16px;
+    background: #ffffff;
+    border-radius: 10px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.controls h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Table-like layout for controls */
+.controls-table {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .control-row {
-    margin: 10px 0;
-}
-
-button {
-    margin: 5px;
-    padding: 8px 16px;
-    border: none;
-    background: #ff80ab;
-    color: white;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 10px;
+    border-bottom: 1px solid #eee;
+    background-color: #fdf8f8;
+    border-radius: 6px;
     transition: background 0.2s ease;
 }
 
-button:hover {
-    background: #f06292;
+.control-row:hover {
+    background-color: #fff1f1;
 }
 
-.clear-btn {
-    margin-top: 15px;
-    background: #e53935;
+.control-img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
 }
 
-.clear-btn:hover {
-    background: #c62828;
+.ingredient-label {
+    flex: 1;
+    margin-left: 8px;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+}
+
+/* Button Styles */
+.buttons {
+    display: flex;
+    gap: 6px;
+}
+
+button {
+    padding: 4px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease-in-out;
+    font-weight: 600;
+}
+
+.btn.add {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn.add:hover {
+    background-color: #43a047;
+}
+
+.btn.remove {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn.remove:hover {
+    background-color: #d32f2f;
+}
+
+.btn.clear {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #607d8b;
+    color: white;
+}
+
+.btn.clear:hover {
+    background-color: #455a64;
 }
 
 /* Animation */
@@ -107,18 +191,4 @@ button:hover {
         transform: translateY(0);
         opacity: 1;
     }
-}
-
-/* Scrollbar Styling */
-.burger::-webkit-scrollbar {
-    width: 6px;
-}
-
-.burger::-webkit-scrollbar-track {
-    background: #ffe0e0;
-}
-
-.burger::-webkit-scrollbar-thumb {
-    background-color: #ff80ab;
-    border-radius: 3px;
 }

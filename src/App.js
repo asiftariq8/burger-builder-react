@@ -13,13 +13,12 @@ export const INGREDIENT_IMAGES = {
 };
 
 // Order of stacking
-const INGREDIENT_ORDER = ['lettuce', 'tomato', 'onion', 'cheese', 'patty'];
+const INGREDIENT_ORDER = ['lettuce', 'tomato', 'cheese', 'patty'];
 
 function App() {
   const [ingredientCounts, setIngredientCounts] = useState({
     lettuce: 0,
     tomato: 0,
-    onion: 0,
     cheese: 0,
     patty: 0,
   });
@@ -42,7 +41,6 @@ function App() {
     setIngredientCounts({
       lettuce: 0,
       tomato: 0,
-      onion: 0,
       cheese: 0,
       patty: 0,
     });
