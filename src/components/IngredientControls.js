@@ -1,6 +1,6 @@
 import React from 'react';
 
-const INGREDIENTS = ['lettuce', 'cheese', 'patty', 'tomato', 'onion'];
+const INGREDIENTS = ['lettuce', 'cheese', 'patty', 'tomato'];
 
 function IngredientControls({ addIngredient, removeIngredient, clearBurger }) {
     return (
