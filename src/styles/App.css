@@ -1,71 +1,107 @@
 .app {
     text-align: center;
-    font-family: sans-serif;
-    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 30px;
+    background: #fff8f2;
 }
 
-.controls {
-    margin-bottom: 20px;
-}
-
-.control-row {
-    margin: 5px 0;
-}
-
-button {
-    margin: 2px;
-    padding: 6px 12px;
-    border: none;
-    background: #f8bbd0;
-    color: #333;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.clear-btn {
-    margin-top: 10px;
-    background: #ef5350;
-    color: white;
-}
-
+/* Burger container */
 .burger {
-    margin: auto;
-    width: 300px;
-    background: #fff3e0;
-    border-radius: 12px;
-    padding: 10px;
-    box-shadow: 0 0 10px #ccc;
-    max-height: 300px;
+    margin: 0 auto 30px auto;
+    width: 260px;
+    background: white;
+    border-radius: 20px;
+    padding: 10px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-height: 450px;
     overflow-y: auto;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
+/* Bun Images */
+.bun-img {
+    width: 180px;
+    height: auto;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Ingredient container */
 .stack {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Each ingredient */
 .ingredient {
-    font-size: 18px;
-    margin: 2px 0;
-    animation: slideIn 0.3s forwards;
+    margin: 6px 0;
+    animation: slideIn 0.3s ease forwards;
     transform: translateY(-10px);
     opacity: 0;
 }
 
+.ingredient-img {
+    width: 150px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s;
+}
+
+.ingredient-img:hover {
+    transform: scale(1.05);
+}
+
+/* Empty placeholder */
 .placeholder {
     font-style: italic;
-    color: #888;
-    margin: 10px;
+    color: #999;
+    margin: 15px;
+    font-size: 14px;
 }
 
-.bun-top,
-.bun-bottom {
+/* Controls styling */
+.controls {
+    margin-top: 20px;
+    display: inline-block;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.control-row {
+    margin: 10px 0;
+}
+
+button {
+    margin: 5px;
+    padding: 8px 16px;
+    border: none;
+    background: #ff80ab;
+    color: white;
     font-weight: bold;
-    font-size: 22px;
-    padding: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
 }
 
+button:hover {
+    background: #f06292;
+}
+
+.clear-btn {
+    margin-top: 15px;
+    background: #e53935;
+}
+
+.clear-btn:hover {
+    background: #c62828;
+}
+
+/* Animation */
 @keyframes slideIn {
     to {
         transform: translateY(0);
@@ -79,11 +115,10 @@ button {
 }
 
 .burger::-webkit-scrollbar-track {
-    background: #fce4ec;
+    background: #ffe0e0;
 }
 
 .burger::-webkit-scrollbar-thumb {
-    background-color: #999;
-    border-radius: 4px;
-    border: 1px solid #777;
+    background-color: #ff80ab;
+    border-radius: 3px;
 }

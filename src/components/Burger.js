@@ -1,32 +1,43 @@
 import React from 'react';
 
-const ingredientImages = {
-    lettuce: '🥬',
-    cheese: '🧀',
-    patty: '🥩',
-    tomato: '🍅',
-    onion: '🧅'
-};
+function Burger({ ingredientCounts, ingredientOrder, ingredientImages }) {
+  // Build the stack array based on order and count
+  const stack = [];
 
-function Burger({ ingredients }) {
-    return (
-        <div className="burger">
-            <div className="bun-top">🥯 Top Bun</div>
+  ingredientOrder.forEach((ingredient) => {
+    const count = ingredientCounts[ingredient] || 0;
+    for (let i = 0; i < count; i++) {
+      stack.push(ingredient);
+    }
+  });
 
-            <div className="stack">
-                {ingredients.length === 0 && (
-                    <div className="placeholder">Add ingredients to build your burger</div>
-                )}
-                {ingredients.map((item, index) => (
-                    <div key={index} className="ingredient">
-                        {ingredientImages[item]} {item}
-                    </div>
-                ))}
+  return (
+    <div className="burger">
+      <div className="bun-top">
+        <img src="/ingredients/top.jpg" alt="Top Bun" className="bun-img" />
+      </div>
+
+      <div className="stack">
+        {stack.length === 0 ? (
+          <div className="placeholder">Add ingredients to build your burger</div>
+        ) : (
+          stack.map((item, index) => (
+            <div key={index} className="ingredient">
+              <img
+                src={ingredientImages[item]}
+                alt={item}
+                className="ingredient-img"
+              />
             </div>
+          ))
+        )}
+      </div>
 
-            <div className="bun-bottom">🥯 Bottom Bun</div>
-        </div>
-    );
+      <div className="bun-bottom">
+        <img src="/ingredients/bottom.jpg" alt="Bottom Bun" className="bun-img" />
+      </div>
+    </div>
+  );
 }
 
 export default Burger;
