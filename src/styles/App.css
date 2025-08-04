@@ -1,0 +1,89 @@
+.app {
+    text-align: center;
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+.control-row {
+    margin: 5px 0;
+}
+
+button {
+    margin: 2px;
+    padding: 6px 12px;
+    border: none;
+    background: #f8bbd0;
+    color: #333;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.clear-btn {
+    margin-top: 10px;
+    background: #ef5350;
+    color: white;
+}
+
+.burger {
+    margin: auto;
+    width: 300px;
+    background: #fff3e0;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 0 10px #ccc;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ingredient {
+    font-size: 18px;
+    margin: 2px 0;
+    animation: slideIn 0.3s forwards;
+    transform: translateY(-10px);
+    opacity: 0;
+}
+
+.placeholder {
+    font-style: italic;
+    color: #888;
+    margin: 10px;
+}
+
+.bun-top,
+.bun-bottom {
+    font-weight: bold;
+    font-size: 22px;
+    padding: 5px;
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Scrollbar Styling */
+.burger::-webkit-scrollbar {
+    width: 6px;
+}
+
+.burger::-webkit-scrollbar-track {
+    background: #fce4ec;
+}
+
+.burger::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 4px;
+    border: 1px solid #777;
+}
